@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.kotlinAndroidKsp)
 }
 
 android {
@@ -70,4 +72,8 @@ dependencies {
 
     //Paging 3
     implementation(libs.androidx.paging.compose)
+
+    //Dagger Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 }

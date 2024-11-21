@@ -8,8 +8,9 @@ import com.zeltech.picsumcompose.data.remote.PicsumApi
 import com.zeltech.picsumcompose.domain.model.Photo
 import com.zeltech.picsumcompose.domain.repository.PicsumRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class PicsumRepositoryImpl(
+class PicsumRepositoryImpl @Inject constructor(
     private val picsumApi: PicsumApi
 ) : PicsumRepository {
     override suspend fun getPhotos(): Flow<PagingData<Photo>> {

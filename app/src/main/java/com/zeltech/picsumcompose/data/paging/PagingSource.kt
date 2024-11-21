@@ -8,8 +8,9 @@ import com.zeltech.picsumcompose.data.remote.PicsumApi
 import com.zeltech.picsumcompose.domain.model.Photo
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class PagingSource(
+class PagingSource @Inject constructor(
     private val api: PicsumApi
 ) : PagingSource<Int, Photo>() {
 
