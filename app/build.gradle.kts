@@ -56,4 +56,18 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //KotlinX Serialization
+    implementation(libs.kotlinx.serialization)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    //OkHttp
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    //Paging 3
+    implementation(libs.androidx.paging.compose)
 }
