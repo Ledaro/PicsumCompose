@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">PicsumCompose</string>
+
+    <!-- Common !-->
+    <string name="retry">Retry</string>
+
+    <!-- Home Screen !-->
+    <string name="home_top_bar_title">Picsum Compose</string>
+    <string name="home_top_bar_icon_description">App Logo</string>
+
+    <!-- Detail Screen !-->
+    <string name="detail_photo_details">Photo Details</string>
+    <string name="detail_photo_id">ID</string>
+    <string name="detail_photo_author">Author</string>
+    <string name="detail_photo_dimensions">Dimensions</string>
+    <string name="detail_photo_download_url">Download URL</string>
+    <string name="detail_photo_by">Photo By</string>
 </resources>

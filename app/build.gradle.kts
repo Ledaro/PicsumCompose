@@ -59,7 +59,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //KotlinX Serialization
+    //Kotlinx Serialization
     implementation(libs.kotlinx.serialization)
 
     // Retrofit
@@ -75,5 +75,13 @@ dependencies {
 
     //Dagger Hilt
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation)
     ksp(libs.hilt.compiler)
+
+    //Coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+    //ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
