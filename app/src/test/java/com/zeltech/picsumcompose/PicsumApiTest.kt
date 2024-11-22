@@ -3,7 +3,6 @@ package com.zeltech.picsumcompose
 import com.google.common.truth.Truth.assertThat
 import com.zeltech.picsumcompose.data.remote.PicsumApi
 import com.zeltech.picsumcompose.domain.model.Photo
-import junit.framework.TestCase.fail
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
@@ -50,7 +49,7 @@ class PicsumApiTest {
 
         mockWebServer.enqueue(mockResponse)
 
-        val photos = picsumApi.getImages(page = 1)
+        val photos = picsumApi.getPhotos(page = 1)
 
         assertThat(photos).hasSize(2)
         assertThat(photos[0].id).isEqualTo(1)
@@ -65,7 +64,7 @@ class PicsumApiTest {
         mockWebServer.enqueue(mockResponse)
 
         val photos = try {
-            picsumApi.getImages(page = 1)
+            picsumApi.getPhotos(page = 1)
         } catch (e: HttpException) {
             emptyList<Photo>()
         }
@@ -80,7 +79,7 @@ class PicsumApiTest {
             .setResponseCode(200)
         mockWebServer.enqueue(mockResponse)
 
-        picsumApi.getImages(page = 2)
+        picsumApi.getPhotos(page = 2)
 
         val request = mockWebServer.takeRequest()
         assertThat(request.path).isEqualTo("/list?page=2&limit=20")
@@ -93,7 +92,7 @@ class PicsumApiTest {
             .setResponseCode(200)
         mockWebServer.enqueue(mockResponse)
 
-        picsumApi.getImages(page = 1)
+        picsumApi.getPhotos(page = 1)
 
         val request = mockWebServer.takeRequest()
         assertThat(request.path).contains("limit=20")
@@ -106,7 +105,7 @@ class PicsumApiTest {
             .setResponseCode(200)
         mockWebServer.enqueue(mockResponse)
 
-        picsumApi.getImages(page = 1, limit = 50)
+        picsumApi.getPhotos(page = 1, limit = 50)
 
         val request = mockWebServer.takeRequest()
         assertThat(request.path).contains("limit=50")

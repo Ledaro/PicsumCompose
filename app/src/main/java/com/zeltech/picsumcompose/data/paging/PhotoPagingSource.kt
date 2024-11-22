@@ -17,7 +17,7 @@ class PhotoPagingSource @Inject constructor(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Photo> {
         return try {
             val currentPage = params.key ?: 1
-            val photos = api.getImages(page = currentPage, limit = PicsumApi.DEFAULT_LIMIT)
+            val photos = api.getPhotos(page = currentPage, limit = PicsumApi.DEFAULT_LIMIT)
 
             LoadResult.Page(
                 data = photos,

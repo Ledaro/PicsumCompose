@@ -21,7 +21,7 @@ class PhotoPagingSourceTest {
     @Test
     fun `refresh load should return expected PageData`() = runTest {
         val mockPhotos = listOf(MockPhotoFactory.createPhoto())
-        coEvery { mockApi.getImages(page = 1, limit = 20) } returns mockPhotos
+        coEvery { mockApi.getPhotos(page = 1, limit = 20) } returns mockPhotos
 
         val photoPagingSource = PhotoPagingSource(mockApi)
         val result = photoPagingSource.load(PagingSource.LoadParams.Refresh(null, 20, false))
@@ -36,7 +36,7 @@ class PhotoPagingSourceTest {
 
     @Test
     fun `refresh load should return IOException error`() = runTest {
-        coEvery { mockApi.getImages(page = 1, limit = 20) } throws IOException("Network error")
+        coEvery { mockApi.getPhotos(page = 1, limit = 20) } throws IOException("Network error")
 
         val pagingSource = PhotoPagingSource(mockApi)
         val result = pagingSource.load(PagingSource.LoadParams.Refresh(null, 20, false))
@@ -54,7 +54,7 @@ class PhotoPagingSourceTest {
                 "Not Found".toResponseBody(null)
             )
         )
-        coEvery { mockApi.getImages(page = 1, limit = 20) } throws exception
+        coEvery { mockApi.getPhotos(page = 1, limit = 20) } throws exception
 
         val pagingSource = PhotoPagingSource(mockApi)
         val result = pagingSource.load(PagingSource.LoadParams.Refresh(null, 20, false))
@@ -67,7 +67,7 @@ class PhotoPagingSourceTest {
     @Test
     fun `refresh load should return correct keys for pagination`() = runTest {
         val photos = listOf(MockPhotoFactory.createPhoto())
-        coEvery { mockApi.getImages(page = 2, limit = 20) } returns photos
+        coEvery { mockApi.getPhotos(page = 2, limit = 20) } returns photos
 
         val pagingSource = PhotoPagingSource(mockApi)
         val result = pagingSource.load(PagingSource.LoadParams.Refresh(2, 20, false))
@@ -82,7 +82,7 @@ class PhotoPagingSourceTest {
     @Test
     fun `append load should return correct keys and data`() = runTest {
         val photos = listOf(MockPhotoFactory.createPhoto())
-        coEvery { mockApi.getImages(page = 2, limit = 20) } returns photos
+        coEvery { mockApi.getPhotos(page = 2, limit = 20) } returns photos
 
         val pagingSource = PhotoPagingSource(mockApi)
         val result = pagingSource.load(PagingSource.LoadParams.Append(2, 20, false))
@@ -97,7 +97,7 @@ class PhotoPagingSourceTest {
     @Test
     fun `prepend load should return correct keys and data`() = runTest {
         val photos = listOf(MockPhotoFactory.createPhoto())
-        coEvery { mockApi.getImages(page = 2, limit = 20) } returns photos
+        coEvery { mockApi.getPhotos(page = 2, limit = 20) } returns photos
 
         val pagingSource = PhotoPagingSource(mockApi)
         val result = pagingSource.load(PagingSource.LoadParams.Prepend(2, 20, false))
