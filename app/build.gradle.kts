@@ -60,6 +60,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //Additional Testing
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockwebserver)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.byte.buddy)
+    testImplementation(libs.byte.buddy.agent)
+
     //Kotlinx Serialization
     implementation(libs.kotlinx.serialization)
 

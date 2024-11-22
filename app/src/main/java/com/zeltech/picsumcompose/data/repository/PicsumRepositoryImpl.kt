@@ -3,7 +3,7 @@ package com.zeltech.picsumcompose.data.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.zeltech.picsumcompose.data.paging.PagingSource
+import com.zeltech.picsumcompose.data.paging.PhotoPagingSource
 import com.zeltech.picsumcompose.data.remote.PicsumApi
 import com.zeltech.picsumcompose.domain.model.Photo
 import com.zeltech.picsumcompose.domain.repository.PicsumRepository
@@ -19,7 +19,7 @@ class PicsumRepositoryImpl @Inject constructor(
                 pageSize = PicsumApi.DEFAULT_LIMIT,
             ),
             pagingSourceFactory = {
-                PagingSource(picsumApi)
+                PhotoPagingSource(picsumApi)
             }
         ).flow
     }
