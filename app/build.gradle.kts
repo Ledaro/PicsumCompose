@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hiltAndroid)
     alias(libs.plugins.kotlinAndroidKsp)
 }
@@ -84,4 +85,7 @@ dependencies {
 
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //Compose Navigation
+    implementation(libs.androidx.navigation.compose)
 }

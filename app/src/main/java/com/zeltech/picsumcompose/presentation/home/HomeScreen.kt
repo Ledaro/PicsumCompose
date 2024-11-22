@@ -72,7 +72,8 @@ fun SharedTransitionScope.HomeScreen(
                 navigationIcon = {
                     Icon(
                         modifier = Modifier
-                            .size(48.dp),
+                            .size(48.dp)
+                            .padding(horizontal = 4.dp),
                         painter = painterResource(R.drawable.picsum_logo),
                         contentDescription = stringResource(R.string.home_top_bar_icon_description),
                     )

@@ -51,10 +51,6 @@ fun SharedTransitionScope.DetailScreen(
                 modifier = Modifier.padding(8.dp)
             ) {
                 Text(
-                    text = stringResource(R.string.detail_photo_details),
-                    style = MaterialTheme.typography.headlineSmall
-                )
-                Text(
                     text = stringResource(R.string.detail_photo_id) + ": ${photo.id}",
                     style = MaterialTheme.typography.bodySmall
                 )
