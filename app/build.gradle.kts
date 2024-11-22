@@ -66,6 +66,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.byte.buddy)
     testImplementation(libs.byte.buddy.agent)
+    testImplementation(libs.truth)
 
     //Kotlinx Serialization
     implementation(libs.kotlinx.serialization)
